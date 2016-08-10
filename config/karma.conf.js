@@ -8,6 +8,8 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-mocha-reporter'),
       require('karma-remap-istanbul'),
       require('angular-cli/plugins/karma')
     ],
@@ -26,11 +28,12 @@ module.exports = function (config) {
     },
     remapIstanbulReporter: {
       reports: {
-        html: 'coverage'
+        html: 'coverage',
+        'text-summary': null
       }
     },
     angularCliConfig: './angular-cli.json',
-    reporters: ['progress', 'karma-remap-istanbul'],
+    reporters: ['mocha', 'kjhtml', 'karma-remap-istanbul'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

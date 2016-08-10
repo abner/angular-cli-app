@@ -1,0 +1,8 @@
+<form>
+  <input type="text" name="campoNome" [(ngModel)]="campoNome" #spy>
+  <button type="reset" >Limpar</button>
+  <pre>
+    {{spy.className}}
+  </pre>
+</form>
+<h1>{{campoNome}}</h1>

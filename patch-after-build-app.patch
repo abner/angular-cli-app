@@ -1,0 +1,222 @@
+diff --git a/config/karma.conf.js b/config/karma.conf.js
+index b8aa26e..3861cbe 100644
+--- a/config/karma.conf.js
++++ b/config/karma.conf.js
+@@ -8,6 +8,8 @@ module.exports = function (config) {
+     plugins: [
+       require('karma-jasmine'),
+       require('karma-chrome-launcher'),
++      require('karma-jasmine-html-reporter'),
++      require('karma-mocha-reporter'),
+       require('karma-remap-istanbul'),
+       require('angular-cli/plugins/karma')
+     ],
+@@ -26,11 +28,12 @@ module.exports = function (config) {
+     },
+     remapIstanbulReporter: {
+       reports: {
+-        html: 'coverage'
++        html: 'coverage',
++        'text-summary': null
+       }
+     },
+     angularCliConfig: './angular-cli.json',
+-    reporters: ['progress', 'karma-remap-istanbul'],
++    reporters: ['mocha', 'kjhtml', 'karma-remap-istanbul'],
+     port: 9876,
+     colors: true,
+     logLevel: config.LOG_INFO,
+diff --git a/index.ts b/index.ts
+new file mode 100644
+index 0000000..4de42d8
+--- /dev/null
++++ b/index.ts
+@@ -0,0 +1 @@
++export * from './forms';
+diff --git a/package.json b/package.json
+index 413e0c0..eb31fe1 100644
+--- a/package.json
++++ b/package.json
+@@ -29,13 +29,15 @@
+   "devDependencies": {
+     "@types/jasmine": "^2.2.30",
+     "@types/protractor": "^1.5.16",
+-    "angular-cli": "1.0.0-beta.11-webpack",
++    "angular-cli": "github:angular/angular-cli",
+     "codelyzer": "0.0.26",
+     "jasmine-core": "2.4.1",
+     "jasmine-spec-reporter": "2.5.0",
+     "karma": "0.13.22",
+     "karma-chrome-launcher": "0.2.3",
+     "karma-jasmine": "0.3.8",
++    "karma-jasmine-html-reporter": "^0.2.1",
++    "karma-mocha-reporter": "^2.1.0",
+     "karma-remap-istanbul": "^0.2.1",
+     "protractor": "3.3.0",
+     "ts-node": "1.2.1",
+diff --git a/src/app/app.component.html b/src/app/app.component.html
+index b6931b5..8fb007d 100644
+--- a/src/app/app.component.html
++++ b/src/app/app.component.html
+@@ -1,3 +1,4 @@
+ <h1>
+   {{title}}
+ </h1>
++<app-forms></app-forms>
+\ No newline at end of file
+diff --git a/src/app/app.component.spec.ts b/src/app/app.component.spec.ts
+index 273bb30..b77007e 100644
+--- a/src/app/app.component.spec.ts
++++ b/src/app/app.component.spec.ts
+@@ -13,8 +13,8 @@ describe('App: Ng2App', () => {
+       expect(app).toBeTruthy();
+     }));
+ 
+-  it('should have as title \'app works!\'',
++  it('should have as title \'app works now!\'',
+     inject([AppComponent], (app: AppComponent) => {
+-      expect(app.title).toEqual('app works!');
++      expect(app.title).toEqual('app works now!');
+     }));
+ });
+diff --git a/src/app/app.component.ts b/src/app/app.component.ts
+index e0113f4..a4bf80f 100644
+--- a/src/app/app.component.ts
++++ b/src/app/app.component.ts
+@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
+   styleUrls: ['app.component.css']
+ })
+ export class AppComponent {
+-  title = 'app works!';
++  title = 'app works now!';
+ }
+diff --git a/src/app/app.module.ts b/src/app/app.module.ts
+index f280356..b132326 100644
+--- a/src/app/app.module.ts
++++ b/src/app/app.module.ts
+@@ -3,10 +3,12 @@ import { NgModule, ApplicationRef } from '@angular/core';
+ import { CommonModule } from '@angular/common';
+ import { FormsModule } from '@angular/forms';
+ import { AppComponent } from './app.component';
++import { FormsComponent } from './forms/forms.component';
+ 
+ @NgModule({
+   declarations: [
+-    AppComponent
++    AppComponent,
++    FormsComponent
+   ],
+   imports: [
+     BrowserModule,
+@@ -18,5 +20,5 @@ import { AppComponent } from './app.component';
+   bootstrap: [AppComponent]
+ })
+ export class AppModule {
+-
++  
+ }
+diff --git a/src/app/forms/forms.component.css b/src/app/forms/forms.component.css
+new file mode 100644
+index 0000000..e69de29
+diff --git a/src/app/forms/forms.component.html b/src/app/forms/forms.component.html
+new file mode 100644
+index 0000000..5b63aa9
+--- /dev/null
++++ b/src/app/forms/forms.component.html
+@@ -0,0 +1,8 @@
++<form>
++  <input type="text" name="campoNome" [(ngModel)]="campoNome" #spy>
++  <button type="reset" >Limpar</button>
++  <pre>
++    {{spy.className}}
++  </pre>
++</form>
++<h1>{{campoNome}}</h1>
+\ No newline at end of file
+diff --git a/src/app/forms/forms.component.spec.ts b/src/app/forms/forms.component.spec.ts
+new file mode 100644
+index 0000000..c0c4988
+--- /dev/null
++++ b/src/app/forms/forms.component.spec.ts
+@@ -0,0 +1,49 @@
++/* tslint:disable:no-unused-variable */
++
++import { By }           from '@angular/platform-browser';
++import { DebugElement } from '@angular/core';
++import { addProviders, async, inject } from '@angular/core/testing';
++import { FormsComponent } from './forms.component';
++
++import {TestBed, getTestBed, ComponentFixture} from '@angular/core/testing';
++import {BrowserDynamicTestingModule, platformBrowserDynamicTesting} from '@angular/platform-browser-dynamic/testing';
++
++import { BrowserModule } from '@angular/platform-browser';
++import { CommonModule } from '@angular/common';
++import { FormsModule } from '@angular/forms';
++
++import { AppModule } from '../app.module';
++
++// testBed.configureTestingModule(AppModule);
++
++
++describe('Component: Forms', () => {
++
++  let testBed: TestBed;
++
++  beforeEach(() => {
++
++    testBed = getTestBed();
++    testBed.configureTestingModule({
++      imports: [
++        BrowserModule,
++        CommonModule,
++        FormsModule
++      ],
++      declarations: [FormsComponent]
++    });
++  });
++
++  it('should create an instance', () => {
++    let component = new FormsComponent();
++    expect(component).toBeTruthy();
++  });
++
++  it('creates component using TestBed', () => {
++    let fixture: ComponentFixture<FormsComponent> = testBed.createComponent(FormsComponent);
++    fixture.componentInstance.campoNome = 'Abner';
++    fixture.detectChanges();
++    let input: HTMLInputElement = fixture.debugElement.query(By.css('input[name="campoNome"]')).nativeElement;
++    expect(input.attributes.getNamedItem('ng-reflect-model').value).toEqual('Abner');
++  });
++});
+diff --git a/src/app/forms/forms.component.ts b/src/app/forms/forms.component.ts
+new file mode 100644
+index 0000000..13a9430
+--- /dev/null
++++ b/src/app/forms/forms.component.ts
+@@ -0,0 +1,19 @@
++import { Component, OnInit } from '@angular/core';
++
++import {ChangeDetectionStrategy} from '@angular/core';
++
++@Component({
++  selector: 'app-forms',
++  templateUrl: 'forms.component.html',
++  styleUrls: ['forms.component.css'],
++  changeDetection: ChangeDetectionStrategy.Default
++})
++export class FormsComponent implements OnInit {
++  campoNome: string;
++
++  constructor() { }
++
++  ngOnInit() {
++  }
++
++}
+diff --git a/src/app/forms/index.ts b/src/app/forms/index.ts
+new file mode 100644
+index 0000000..a9fce55
+--- /dev/null
++++ b/src/app/forms/index.ts
+@@ -0,0 +1 @@
++export * from './forms.component';

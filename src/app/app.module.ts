@@ -3,10 +3,12 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
@@ -18,5 +20,5 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-
+  
 }
