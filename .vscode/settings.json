@@ -1,0 +1,6 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    // @author: Abner Oliveira
+    // explicited asking vscode to use typescript lib present in node_modules folder  
+    "typescript.tsdk": "node_modules/typescript/lib"
+}

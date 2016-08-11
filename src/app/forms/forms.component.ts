@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {ChangeDetectionStrategy} from '@angular/core';
+import { ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-forms',
@@ -11,9 +11,16 @@ import {ChangeDetectionStrategy} from '@angular/core';
 export class FormsComponent implements OnInit {
   campoNome: string;
 
+  formDisabled: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+    debugger;
+  }
+
+  setDisabled() {
+    this.formDisabled = true;
   }
 
 }

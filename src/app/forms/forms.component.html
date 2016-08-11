@@ -1,5 +1,5 @@
 <form>
-  <input type="text" name="campoNome" [(ngModel)]="campoNome" #spy>
+  <input type="text" name="campoNome" [(ngModel)]="campoNome" #spy [hidden]="formDisabled">
   <button type="reset" >Limpar</button>
   <pre>
     {{spy.className}}

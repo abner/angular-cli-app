@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FormsComponent } from './forms/forms.component';
+import { FormReactiveComponentComponent } from './form-reactive-component/form-reactive-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormsComponent
+    FormsComponent,
+    FormReactiveComponentComponent
   ],
   imports: [
     BrowserModule,
