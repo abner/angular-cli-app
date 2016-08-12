@@ -6,11 +6,14 @@ import { AppComponent } from './app.component';
 import { FormsComponent } from './forms/forms.component';
 import { FormReactiveComponentComponent } from './form-reactive-component/form-reactive-component.component';
 
+import { NewComponent} from './forms/new.component';
+import { AbnerComponent } from './abner/abner.component';
 @NgModule({
   declarations: [
-    AppComponent,
+    NewComponent,
     FormsComponent,
-    FormReactiveComponentComponent
+    FormReactiveComponentComponent,
+    AbnerComponent
   ],
   imports: [
     BrowserModule,

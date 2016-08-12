@@ -1,8 +1,18 @@
-<form>
-  <input type="text" name="campoNome" [(ngModel)]="campoNome" #spy [hidden]="formDisabled">
-  <button type="reset" >Limpar</button>
+
+<form class="form" role="form">
+  <div class="form-group">
+    <label for="email">Campo Nome:</label>
+    <input type="text" class="form-control" id="campoNome" name="campoNome" [(ngModel)]="campoNome" #spy [hidden]="formDisabled">
+    <h4>{{campoNome}}</h4>
+  </div>
+
   <pre>
     {{spy.className}}
   </pre>
+  <div class="form-group">
+    <div class="center">
+      <button type="submit" class="btn btn-primary"> <i class="glyphicon glyphicon-ok-circle"></i> Salvar</button>
+      <button type="reset" class="btn btn-default">Limpar</button>
+    </div>
+  </div>
 </form>
-<h1>{{campoNome}}</h1>
