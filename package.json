@@ -8,7 +8,8 @@
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "postinstall": "ts-node scripts/copy-assets.ts"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@types/jasmine": "^2.2.30",
     "@types/protractor": "^1.5.16",
+    "@types/shelljs": "^0.3.28",
     "angular-cli": "github:angular/angular-cli",
     "bootstrap-sass": "^3.3.7",
     "codelyzer": "0.0.26",
@@ -43,7 +45,7 @@
     "karma-remap-istanbul": "^0.2.1",
     "protractor": "3.3.0",
     "replace": "^0.3.0",
-    "ts-node": "1.2.1",
+    "ts-node": "^1.2.1",
     "tslint": "3.13.0",
     "typescript": "^2.0.0"
   }
