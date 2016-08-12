@@ -16,9 +16,13 @@ O Angular Cli é um utilitário de linha de comando desenvolvido em NodeJS que p
 
 Guia rápido para o Angular Cli - (!)[https://cli.angular.io/reference.pdf]
 
+## Instalando o Angular Cli
+npm install --save-dev angular/angular-cli#9188ea2
+
+
 # Ng2App
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.11-webpack.
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) angular/angular-cli#9188ea2
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

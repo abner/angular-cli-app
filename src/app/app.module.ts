@@ -12,6 +12,16 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 //import { BootstrapModule } from './bootstrap.module';
 
+import { MdButtonModule } from '@angular2-material/button';
+import { MdCardModule } from '@angular2-material/card';
+import { MdCoreModule } from '@angular2-material/core';
+
+const MATERIAL_COMPONENTS_MODULES = [
+  MdButtonModule,
+  MdCardModule,
+  MdCoreModule
+];
+
 @NgModule({
   declarations: [
     NewComponent,
@@ -24,6 +34,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserModule,
     CommonModule,
     FormsModule,
+    ...MATERIAL_COMPONENTS_MODULES
     // BootstrapModule
   ],
   providers: [],
