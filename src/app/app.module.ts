@@ -8,17 +8,23 @@ import { FormReactiveComponentComponent } from './form-reactive-component/form-r
 
 import { NewComponent} from './forms/new.component';
 import { AbnerComponent } from './abner/abner.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
+//import { BootstrapModule } from './bootstrap.module';
+
 @NgModule({
   declarations: [
     NewComponent,
     FormsComponent,
     FormReactiveComponentComponent,
-    AbnerComponent
+    AbnerComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    // BootstrapModule
   ],
   providers: [],
   entryComponents: [AppComponent],

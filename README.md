@@ -1,3 +1,21 @@
+#CURSO ANGULAR 2 - Versão RC5
+
+> Repositório a ser utilizado nas Aulas do Angular 2 no SERPRO - a ser realizado entre os dias 17 e 23 de Agosto de 2016.
+
+Neste treinamento estaremos utilizando a mais recente versão do Angular 2, que é a RC5 que já apresenta a API pública definida para a versão final do Angular 2.
+
+Estamos utilizando também o [Angular-CLI](https://cli.angular.io/). Ferramenta Oficial do Angular 2 para geração de Projeto, Controle de execução de Builds e Testes.
+
+O Angular Cli é um utilitário de linha de comando desenvolvido em NodeJS que permite a geração de um novo projeto e também ao longo do projeto pode ser utilizaado para gerar:
+
+* Componente
+* Diretivas
+* Serviços
+* ~Rotas~ (na versão atual está desabilitado por conta da mudança recente das rotas do Angular 2
+* Pipes
+
+Guia rápido para o Angular Cli - (!)[https://cli.angular.io/reference.pdf]
+
 # Ng2App
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.11-webpack.

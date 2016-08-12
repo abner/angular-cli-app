@@ -1,10 +1,17 @@
-
 <form class="form" role="form">
   <div class="form-group">
     <label for="email">Campo Nome:</label>
     <input type="text" class="form-control" id="campoNome" name="campoNome" [(ngModel)]="campoNome" #spy [hidden]="formDisabled">
     <h4>{{campoNome}}</h4>
   </div>
+
+  <div class="form-group">
+    <label for="data">Data:</label>
+    <input type="date" id="data" class="form-control" [(ngModel)]="dt" name="data">
+  </div>
+
+
+
 
   <pre>
     {{spy.className}}
