@@ -16,7 +16,7 @@ export class FormsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    debugger;
+
   }
 
   setDisabled() {

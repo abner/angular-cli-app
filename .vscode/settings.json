@@ -2,5 +2,14 @@
 {
     // @author: Abner Oliveira
     // explicited asking vscode to use typescript lib present in node_modules folder  
-    "typescript.tsdk": "node_modules/typescript/lib"
+    "typescript.tsdk": "node_modules/typescript/lib",
+     "search.exclude": {
+         "dist": true,
+         ".vscode": true,
+         "public/vendor": true,
+         "coverage": true,
+        "**/node_modules": true,
+        "**/node_modules/angular-cli": false,
+        "**/bower_components": true
+    }
 }
