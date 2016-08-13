@@ -10,6 +10,16 @@ import { NewComponent} from './features/forms/new.component';
 
 import { NavbarComponent } from './layout/navbar/navbar.component';
 
+import { MdButtonModule } from '@angular2-material/button';
+import { MdCardModule } from '@angular2-material/card';
+import { MdCoreModule } from '@angular2-material/core';
+
+const MATERIAL_COMPONENTS_MODULES = [
+  MdButtonModule,
+  MdCardModule,
+  MdCoreModule
+];
+
 @NgModule({
   declarations: [
     NewComponent,
@@ -20,7 +30,8 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
   imports: [
     BrowserModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    ...MATERIAL_COMPONENTS_MODULES
   ],
   providers: [],
   entryComponents: [AppComponent],
