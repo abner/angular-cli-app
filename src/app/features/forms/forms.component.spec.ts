@@ -12,7 +12,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { AppModule } from '../app.module';
+import { AppModule } from '../../app.module';
 
 /**
  * Exemplo de testes de um componente Angular 2

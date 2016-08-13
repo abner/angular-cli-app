@@ -11,31 +11,3 @@
   </div>
 
 </div>
-
-<new-cmp></new-cmp>
-
-<md-card class="app-input-section">
-      <md-input placeholder="First name"></md-input>
-
-      <md-input #nickname placeholder="Nickname" maxlength="50">
-        <md-hint align="end">
-          {{nickname.characterCount}} / 50
-        </md-hint>
-      </md-input>
-
-      <md-input>
-        <md-placeholder>
-          <i class="material-icons app-input-icon">android</i> Favorite phone
-        </md-placeholder>
-      </md-input>
-
-        <button md-button disableRipple color="primary">SNIFF</button>
-    <button md-raised-button [disableRipple]=true color="primary">WOOF</button>
-
-      <md-input placeholder="Motorcycle model">
-        <span md-prefix>
-          <i class="material-icons app-input-icon">motorcycle</i>
-          &nbsp;
-        </span>
-      </md-input>
-    </md-card>
