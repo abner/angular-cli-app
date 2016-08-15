@@ -31,9 +31,11 @@ Muitos dos conceitos permanecem:
 
 * MV* => MVC [Model View Controller] ou MVVM [Model View View-Model Controller]
 
-* serviços
+* Serviços
 
 * Diretivas
+
+* Pipe (No AngularJS era chamado de filter)
 
 
 
