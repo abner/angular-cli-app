@@ -17,6 +17,8 @@ No terminal de linha de comando digite:
 npm install -g angular/angular-cli#9188ea2
 ```
 
+:):
+
 Após instalado, o utilitário `ng` estará disponível no PATH, possibilitando a execução do `ng`.
 
 
@@ -68,6 +70,6 @@ e  digite o comando `ng serve` e pressione **ENTER &#11168;**:
  ![](imagens/app-works.png)
 
 > Bem modesta a tela né! Você deve estar se perguntando: "É isso que é o Angular 2?" 
-Calma aí! É apenas o começo! [:D]
+Calma aí! É apenas o começo! :smile:
 
 Se essa tela pode ser visualizada corretamente no seu navegador, então sua aplicação Angular 2 está criada e agora poderemos abrí-la em um editor e começaremos a aprender mais sobre o Angular 2.
