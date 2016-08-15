@@ -1,4 +1,3 @@
-
 # Aula 1 - Passo a Passo
 
 ## Criando nossa primeira aplicação Angular 2
@@ -36,7 +35,7 @@ Este passo poderá demorar alguns minutos.
 
 Você visualizará algo similar à imagem a seguir no seu terminal.
 
-![](./imagens/captura-ng-new.png)
+![](imagens/captura-ng-new.png)
 
 > Antes de testar vamos precisar atualizar a versão do angular-cli definida como dependência para nosso projeto. Este passo é necessário nas versões beta do Angular-Cli.
 
@@ -56,7 +55,7 @@ cd app-curso-angular2
 
 e  digite o comando `ng serve` e pressione **ENTER &#11168;**:
 
-![](./imagens/ng-serve.png)    
+![](imagens/ng-serve.png)    
 
  
  O angular-cli inicializa um servidor web na porta 4200:
