@@ -247,21 +247,34 @@ Como podemos ver os bindings, com excessão expressões de interpolação, possu
 
 Os alvos do data-binding do Angular 2 não são atributos HTML, estritamente falando. Por quê? Por que os atributos html são utilizados pelos navegadores apenas para inicializar valores no DOM do elemento HTML.
 
-Se manipularmos a propriedade value do elemento <input type="text" id="nome" value="Joao"> para "Joaquim"
+Vamos fazer o seguinte exercício:
 
-```html
-document.getElementById('nome').value = 'Joaquim';
+Acessem o <a href="https://plnkr.co/edit/">plunkr</a> e adicionem no HTML o seguinte elemento>:
+
 ```
- 
- efetivamente o elemento terá sua propriedade value alterada para `Joaquim`. No entanto o HTML permanecerá com o value 'João'.
+<input type="text" id="nome" value="Joao">
 
- ```html
- document.getElementById('nome').getAttribute('value');
- ```
+<button onClick="alterarPropriedade()">Alterar propriedade value</button>
+```
+
+Agora no javascript vamos manipular a propriedade value do elemento  para "Joaquim".
+
+Adicione o javascript abaixo no arquivo `script.js`. 
+
+```javascript
+function alterarPropriedade() {
+  document.getElementById('nome').value = 'Joaquim';
+  alert('Atributo Value = ' + document.getElementById('nome').getAttribute('value'));
+}
+```
+
+Agora clique no botão `Run`.
+
+> Veremos que efetivamente elemento terá sua propriedade value alterada para `Joaquim`. No entanto o HTML permanecerá com o value 'João'.
 
 A diferença basicamente é a seguinte: 
 
-O atributo value define o valor inicial. A propriedade value do DOM  referencia o valor atual e permite atualizá-lo.
+O *atributo* value define o valor inicial. A *propriedade* `value` do DOM  referencia o valor atual e permite atualizá-lo.
 
 > É crucial salientar esta diferença uma vez que os templates bindings dizem respeito à propriedades e eventos, não a atributos. (Há uma rara exceção que iremos mostrar a seguir, mas que inclusive possui uma sintaxe particular)
 
