@@ -20,12 +20,15 @@ const MATERIAL_COMPONENTS_MODULES = [
   MdCoreModule
 ];
 
+import { UserBoxComponent } from './features/user-box/user-box.component';
+
 @NgModule({
   declarations: [
     NewComponent,
     FormsComponent,
     FormReactiveComponentComponent,
-    AppComponent
+    AppComponent,
+    UserBoxComponent
   ],
   imports: [
     BrowserModule,

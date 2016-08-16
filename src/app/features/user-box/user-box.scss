@@ -1,0 +1,30 @@
+:host {
+    background: none repeat scroll 0 0 #00a8b3;
+    display: block;
+    height: 63px;
+    margin: 4px 0px 3px 0px;
+}
+.inbox-avatar {
+    float: left;
+    width: 65px;
+}
+.inbox-avatar img {
+    border-radius: 4px;
+}
+.user-name {
+    display: inline-block;
+    margin: 0 0 0 10px;
+}
+.user-name h5 {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+.user-name h5 a {
+    color: #fff;
+}
+.user-name span a {
+    color: #87e2e7;
+    font-size: 12px;
+}

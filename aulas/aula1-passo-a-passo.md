@@ -90,7 +90,7 @@ Se essa tela pode ser visualizada corretamente no seu navegador, então sua apli
 
 - A classe e o metadado @Component
 
-- A view (template)
+- A view (template e templateUrl)
 
 ### Expressões de Template
 
@@ -338,39 +338,20 @@ export class AppComponent {
 </table>
 ```
 
-### Variável de referência de template
-
-
-
-
-
---- $event and event handling statements
-```
-<input [value]="currentHero.firstName"
-       (input)="currentHero.firstName=$event.target.value" >
-```
---- 
-
-
---- Custom Events with EventEmitter
-Exemplo: Lógica de Exclusão
---- 
-
-
 ### NgModel explicado
 
-```
+```html
 <input [value]="currentHero.firstName"
        (input)="currentHero.firstName=$event.target.value" >
 ```
 
-```
+```html
 <input
   [ngModel]="currentHero.firstName"
   (ngModelChange)="currentHero.firstName=$event">
 ```
 
-```
+```html
 <input [(ngModel)]="currentHero.firstName">
 ```
 
@@ -564,7 +545,100 @@ Uma sintaxe alternativa é utilizar o prefixo `ref-`:
 <button (click)="registrarLigacao(telefone.value)">Ligar</button>
 ```
 
-## @Input e @Output - Databind de propriedades e eventos nos nossos próprios componentes:
+## @Input e @Output - Databind de propriedades e eventos nos nossos próprios componentes
+
+Aprendemos ao transcorrer desta aula a sintaxe do Angular 2 para fazermos bindings de propriedades e de eventos.
+
+Agora vamos ver como definir propriedades e eventos em nossos próprio componentes.
+
+O Core do Framework nos fornece dois decoradores que podemos utilizar em nossas classes de componentes que possibilitam expor nossas próprias propriedades e nossos eventos:
+
+`@Input` e `@Output`
+
+O @Input nos permite expor propriedades de nossos componentes que poderão assim receber ligações (data binding), permitindo que o componente contêiner de nosso componente passe valores de entrada para a propriedade do nosso componente.
+
+
+Vamos ver um exemplo de um componente userBox que irá exibir informações do usuário passado via input:
+
+**user-box.component.ts**
+
+```typescript
+import { Component, Input } from '@angular/core';
+
+import { User } from './user.interface';
+@Component({
+  selector: 'user-box',
+  templateUrl: './user-box.component.html',
+  styleUrls: ['./user-box.scss']
+})
+export class UserBoxComponent {
+  @Input() user: User;
+}
+```
+
+**user.interface.ts**
+
+```typescript
+export interface User {
+  name: string;
+  email: string;
+}
+```
+
+**user-box.scss**
+
+```css
+:host {
+    background: none repeat scroll 0 0 #00a8b3;
+    display: block;
+    height: 63px;
+    margin: 4px 0px 3px 0px;
+}
+.inbox-avatar {
+    float: left;
+    width: 65px;
+}
+.inbox-avatar img {
+    border-radius: 4px;
+}
+.user-name {
+    display: inline-block;
+    margin: 0 0 0 10px;
+}
+.user-name h5 {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+.user-name h5 a {
+    color: #fff;
+}
+.user-name span a {
+    color: #87e2e7;
+    font-size: 12px;
+}
+```
+
+**user-box.html**
+
+```html
+    <a class="inbox-avatar" href="javascript:;">
+        <img  width="64" hieght="60" src="http://bootsnipp.com/img/avatars/ebeb306fd7ec11ab68cbcaa34282158bd80361a7.jpg">
+    </a>
+    <div class="user-name">
+        <h5><a href="#">{{user.name}}</a></h5>
+        <span><a href="#">{{user.email}}</a></span>
+    </div>
+    <a class="mail-dropdown pull-right" href="javascript:;">
+        <i class="fa fa-chevron-down"></i>
+    </a>
+```
+
+
+```
+import { UserBoxComponent } from './features/user-box/user-box.component';
+```
 
 Exercício prático:
 
