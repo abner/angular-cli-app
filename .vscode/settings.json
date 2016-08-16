@@ -11,5 +11,9 @@
         "**/node_modules": true,
         "**/node_modules/angular-cli": false,
         "**/bower_components": true
-    }
+    },
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "terminal.integrated.fontFamily": "monaco",
+    "terminal.integrated.fontSize": "11pt",
+
 }

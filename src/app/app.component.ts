@@ -11,4 +11,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works now!';
+
+  minhaData: string = '24/02/2015';
 }

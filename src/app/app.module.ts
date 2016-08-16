@@ -21,14 +21,15 @@ const MATERIAL_COMPONENTS_MODULES = [
 ];
 
 import { UserBoxComponent } from './features/user-box/user-box.component';
-
+import { DateInputMaskDirective } from './core/directives/date-input-mask.directive';
 @NgModule({
   declarations: [
     NewComponent,
     FormsComponent,
     FormReactiveComponentComponent,
     AppComponent,
-    UserBoxComponent
+    UserBoxComponent,
+    DateInputMaskDirective
   ],
   imports: [
     BrowserModule,
