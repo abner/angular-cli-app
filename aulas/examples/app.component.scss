@@ -1,0 +1,111 @@
+// styles applied on :host are applied on the current component, "app" in this case
+:host {
+  display: block;
+  height: 100%;
+}
+
+header {
+  background-color: #fff;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+main {
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  display: block;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.secondary {
+  color: rgba(0,0,0,0.54);
+}
+
+[md-fab] {
+  position: absolute;
+  right: 3%;
+  top: 34px;
+  z-index: 1;
+}
+
+md-sidenav-layout {
+  background: rgba(0,0,0,0.03);
+}
+
+md-input {
+  margin: 8px 0;
+  width: 100%;
+}
+
+md-radio-button, md-checkbox {
+  margin: 16px 8px;
+}
+
+.form {
+  display: flex;
+}
+
+.form md-card {
+  flex-grow: 1;
+}
+
+md-card {
+  width: 400px;
+  box-sizing: border-box;
+  margin: 16px;
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.secondary {
+ color: rgba(0,0,0,0.54);
+}
+
+
+.main-container {
+  padding: 15px;
+  margin: 10px;
+  height: 100%;
+}
+
+.md-list-item   .md-list-text {
+   display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 16px;
+
+    }
+ .active-link {
+    color: rgb(0,190, 240) !important;
+}
+
+
+// md-toolbar.toolbar-navy {
+//   background-color: #0008Ae !important;
+//   color: white;
+// }
