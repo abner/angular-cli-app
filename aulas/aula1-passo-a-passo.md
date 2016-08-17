@@ -125,7 +125,7 @@ Outras diferenças importantes são:
  - `|`   -> O operador Pipe
 
  ```
- div>Data de Nascimento: {{ dataNascimento | date:'longDate'}}</div>
+ <div>Data de Nascimento: {{ dataNascimento | date:'longDate'}}</div>
  ```
 
 O operador Pipe já é conhecido de desenvolvedores de AngularJS. Basicamente pipes são funções de transformação, que recebem um dado de entrada, processam e retornam o valor processado.
