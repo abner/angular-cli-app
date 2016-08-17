@@ -1,7 +1,10 @@
-## Serviços e providers
+
+## Injeção de Dependências, Serviços e outros Providers
 
 
-## Injeção de Dependências
+Injeção de dependência é um padrão de codificação em que uma classe recebe instâncias de objetos de outras classes que ela depende, ao invés de ela mesmo criar essas instâncias.
+
+ 
 
 * Injetor de Dependências Hierárquico
 
