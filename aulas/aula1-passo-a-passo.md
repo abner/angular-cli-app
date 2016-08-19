@@ -213,7 +213,7 @@ Versão: {{versao}}
 ```
 
 Template statements são livres para alterar dados na instância do componente. Eles também se parecem muito com Javascript. 
-O parser de template statements permitem atribuições básicas e encadeamento de exmpressões com `,` e `;`.
+O parser de template statements permitem atribuições básicas e encadeamento de expressões com `,` e `;`.
 
 Não são permitidos:
 
