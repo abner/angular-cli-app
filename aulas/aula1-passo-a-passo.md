@@ -14,7 +14,7 @@
 No terminal de linha de comando digite:
 
 ```bash
-npm install -g angular/angular-cli#9188ea2
+npm install -g angular/angular-cli#0d914b2
 ```
 
 Após instalado, o utilitário `ng` estará disponível no PATH, possibilitando a execução do `ng`.
@@ -42,7 +42,7 @@ Você visualizará algo similar à imagem a seguir no seu terminal.
 Digite no terminal:
 
 ```bash
-npm install --save-dev angular/angular-cli#9188ea2
+npm install --save-dev angular/angular-cli#0d914b2
 ```
 
 Agora já podemos testar a aplicação Angular 2 gerada:
