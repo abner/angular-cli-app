@@ -16,8 +16,27 @@ O Angular Cli é um utilitário de linha de comando desenvolvido em NodeJS que p
 
 Guia rápido para o Angular Cli - (!)[https://cli.angular.io/reference.pdf]
 
+
+
 ## Instalando o Angular Cli
-npm install --save-dev angular/angular-cli#9188ea2
+
+npm install -g angular/angular-cli#1ecd72d
+
+
+### Criando a aplicação
+
+ng new angular2-app --style=scss
+
+
+Após a instalação da aplicação, navegue para a pasta da aplicação angular: 
+
+> `cd angular2-app`
+
+e atualize a versão do pacote do angular-cli no package.json da aplicação gerada com o comando a seguir:
+
+npm install --save-dev angular/angular-cli#1ecd72d
+
+Este passo é necessário por conta da aplicação angular-cli ainda estar no estágio de testes (beta).
 
 
 # Ng2App
